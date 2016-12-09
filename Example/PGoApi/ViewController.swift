@@ -86,9 +86,9 @@ class ViewController: UIViewController, PGoAuthDelegate, PGoApiDelegate {
         // Init the api with successful auth
         request = PGoApiRequest(auth: auth)
         
-        // Set the latitude/longitude of player. 
-        // Altitude should be included, but it is optional and defaults to 6.0
-        request!.setLocation(latitude: Double(latField.text!)!, longitude: Double(longField.text!)!, altitude: 67.61)
+        // Set the latitude/longitude of player.
+        // Altitude should be included, but it is optional and defaults to 10.1
+        request!.setLocation(Double(latField.text!)!, longitude: Double(longField.text!)!, altitude: 10.1)
         
         // Simulate the start, which cues methods: 
         // getPlayer(), getHatchedEggs(), getInventory(), checkAwardedBadges(), downloadSettings()
