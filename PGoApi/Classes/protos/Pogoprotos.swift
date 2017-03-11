@@ -15,6 +15,7 @@ import ProtocolBuffers
 public struct Pogoprotos {
     
     public struct Data {
+        public struct Avatar { }
         public struct Badge { }
         public struct Battle { }
         public struct Capture { }
@@ -24,7 +25,8 @@ public struct Pogoprotos {
         public struct Quests { }
     }
     
-    public struct Enums { }
+    public struct Enums {
+    }
     
     public struct Inventory {
         public struct Item { }

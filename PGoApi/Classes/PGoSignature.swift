@@ -77,7 +77,9 @@ internal class LocationFix {
             } else {
                 let countRemoved = Int(round(Double(timeAdd)/1000))
                 for _ in 0..<countRemoved {
-                    self.api.locationFix.builders.removeLast()
+                    if(self.api.locationFix.builders.count > 0) {
+                        self.api.locationFix.builders.removeLast()
+                    }
                 }
                 for i in 0..<self.api.locationFix.builders.count {
                     self.api.locationFix.builders[i].timestampSnapshot += timeAdd

@@ -10,7 +10,7 @@ import Foundation
 
 
 internal struct PGoVersion {
-    internal static let versionHash: Int64 = -1553869577012279119
+    internal static let versionHash: Int64 =  -816976800928766045
     internal static let versionString: String = "0.45.0"
     internal static let versionInt: UInt32 = 4500
     internal static let HASH_SEED: UInt32 = 0x46E945F8

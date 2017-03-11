@@ -46,7 +46,7 @@ open class GPSOAuth: PGoAuth {
     open var authToken: Pogoprotos.Networking.Envelopes.AuthTicket?
     open var manager: SessionManager
     open var banned: Bool = false
-    fileprivate var refreshToken: String?
+    open var refreshToken: String?
 
     public init(proxyHost: String? = nil, proxyPort: Int? = nil) {
         let configuration = URLSessionConfiguration.default

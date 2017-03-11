@@ -17,7 +17,7 @@ public struct PGoApiResponse {
 }
 
 public struct PGoResponseObject {
-    public var playerUpdate: Pogoprotos.Networking.Responses.PlayerUpdateResponse? = nil
+    //public var playerUpdate: Pogoprotos.Networking.Responses.PlayerUpdateResponse? = nil
     public var getPlayer: Pogoprotos.Networking.Responses.GetPlayerResponse? = nil
     public var getInventory: Pogoprotos.Networking.Responses.GetInventoryResponse? = nil
     public var downloadSettings: Pogoprotos.Networking.Responses.DownloadSettingsResponse? = nil
@@ -61,7 +61,7 @@ public struct PGoResponseObject {
     public var setContactSettings: Pogoprotos.Networking.Responses.SetContactSettingsResponse? = nil
     public var getAssetDigest: Pogoprotos.Networking.Responses.GetAssetDigestResponse? = nil
     public var getDownloadUrls: Pogoprotos.Networking.Responses.GetDownloadUrlsResponse? = nil
-    public var getSuggestedCodenames: Pogoprotos.Networking.Responses.GetSuggestedCodenamesResponse? = nil
+    //public var getSuggestedCodenames: Pogoprotos.Networking.Responses.GetSuggestedCodenamesResponse? = nil
     public var checkCodenameAvailable: Pogoprotos.Networking.Responses.CheckCodenameAvailableResponse? = nil
     public var claimCodename: Pogoprotos.Networking.Responses.ClaimCodenameResponse? = nil
     public var setAvatar: Pogoprotos.Networking.Responses.SetAvatarResponse? = nil

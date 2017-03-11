@@ -229,10 +229,11 @@ internal class PGoRpcApi {
             responseObject!.getAssetDigest = parsedData as? Pogoprotos.Networking.Responses.GetAssetDigestResponse
         case .getDownloadUrls:
             responseObject!.getDownloadUrls = parsedData as? Pogoprotos.Networking.Responses.GetDownloadUrlsResponse
-        case .getSuggestedCodenames:
+        /*case .getSuggestedCodenames:
             responseObject!.getSuggestedCodenames = parsedData as? Pogoprotos.Networking.Responses.GetSuggestedCodenamesResponse
         case .checkCodenameAvailable:
             responseObject!.checkCodenameAvailable = parsedData as? Pogoprotos.Networking.Responses.CheckCodenameAvailableResponse
+ */
         case .claimCodename:
             responseObject!.claimCodename = parsedData as? Pogoprotos.Networking.Responses.ClaimCodenameResponse
         case .setAvatar:

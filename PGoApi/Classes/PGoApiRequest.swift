@@ -271,7 +271,7 @@ open class PGoApiRequest {
         checkAwardedBadges()
         downloadSettings()
     }
-    
+    /*
     open func updatePlayer() {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.PlayerUpdateMessage.Builder()
         messageBuilder.latitude = Location.lat
@@ -280,6 +280,7 @@ open class PGoApiRequest {
             return try! Pogoprotos.Networking.Responses.PlayerUpdateResponse.parseFrom(data: data)
         }))
     }
+ */
     
     open func registerBackgroundDevice(deviceId: String, deviceType: String) {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.RegisterBackgroundDeviceMessage.Builder()
@@ -775,21 +776,21 @@ open class PGoApiRequest {
             return try! Pogoprotos.Networking.Responses.GetDownloadUrlsResponse.parseFrom(data: data)
         }))
     }
-    
+    /*
     open func getSuggestedCodenames() {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.GetSuggestedCodenamesMessage.Builder()
         methodList.append(PGoApiMethod(id: .getSuggestedCodenames, message: try! messageBuilder.build(), parser: { data in
             return try! Pogoprotos.Networking.Responses.GetSuggestedCodenamesResponse.parseFrom(data: data)
         }))
     }
-    
     open func checkCodenameAvailable(codename: String) {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.CheckCodenameAvailableMessage.Builder()
         messageBuilder.codename = codename
         methodList.append(PGoApiMethod(id: .checkCodenameAvailable, message: try! messageBuilder.build(), parser: { data in
             return try! Pogoprotos.Networking.Responses.CheckCodenameAvailableResponse.parseFrom(data: data)
         }))
-    }
+     }
+     */
     
     open func claimCodename(codename: String) {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.ClaimCodenameMessage.Builder()
@@ -809,7 +810,7 @@ open class PGoApiRequest {
         playerAvatar.shirt = shirt
         playerAvatar.pants = pants
         playerAvatar.hat = hat
-        playerAvatar.gender = gender
+        //playerAvatar.gender = gender
         playerAvatar.eyes = eyes
         
         try! messageBuilder.playerAvatar = playerAvatar.build()

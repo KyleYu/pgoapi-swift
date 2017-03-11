@@ -5,145 +5,33 @@
 import Foundation
 import ProtocolBuffers
 
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.BattleAttributes, rhs: Pogoprotos.Settings.Master.Item.BattleAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.EggIncubatorAttributes, rhs: Pogoprotos.Settings.Master.Item.EggIncubatorAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasIncubatorType == rhs.hasIncubatorType) && (!lhs.hasIncubatorType || lhs.incubatorType == rhs.incubatorType)
-  fieldCheck = fieldCheck && (lhs.hasUses == rhs.hasUses) && (!lhs.hasUses || lhs.uses == rhs.uses)
-  fieldCheck = fieldCheck && (lhs.hasDistanceMultiplier == rhs.hasDistanceMultiplier) && (!lhs.hasDistanceMultiplier || lhs.distanceMultiplier == rhs.distanceMultiplier)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes, rhs: Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasXpMultiplier == rhs.hasXpMultiplier) && (!lhs.hasXpMultiplier || lhs.xpMultiplier == rhs.xpMultiplier)
-  fieldCheck = fieldCheck && (lhs.hasBoostDurationMs == rhs.hasBoostDurationMs) && (!lhs.hasBoostDurationMs || lhs.boostDurationMs == rhs.boostDurationMs)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.FoodAttributes, rhs: Pogoprotos.Settings.Master.Item.FoodAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.itemEffect == rhs.itemEffect)
-  fieldCheck = fieldCheck && (lhs.itemEffectPercent == rhs.itemEffectPercent)
-  fieldCheck = fieldCheck && (lhs.hasGrowthPercent == rhs.hasGrowthPercent) && (!lhs.hasGrowthPercent || lhs.growthPercent == rhs.growthPercent)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.FortModifierAttributes, rhs: Pogoprotos.Settings.Master.Item.FortModifierAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasModifierLifetimeSeconds == rhs.hasModifierLifetimeSeconds) && (!lhs.hasModifierLifetimeSeconds || lhs.modifierLifetimeSeconds == rhs.modifierLifetimeSeconds)
-  fieldCheck = fieldCheck && (lhs.hasTroyDiskNumPokemonSpawned == rhs.hasTroyDiskNumPokemonSpawned) && (!lhs.hasTroyDiskNumPokemonSpawned || lhs.troyDiskNumPokemonSpawned == rhs.troyDiskNumPokemonSpawned)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.IncenseAttributes, rhs: Pogoprotos.Settings.Master.Item.IncenseAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasIncenseLifetimeSeconds == rhs.hasIncenseLifetimeSeconds) && (!lhs.hasIncenseLifetimeSeconds || lhs.incenseLifetimeSeconds == rhs.incenseLifetimeSeconds)
-  fieldCheck = fieldCheck && (lhs.pokemonType == rhs.pokemonType)
-  fieldCheck = fieldCheck && (lhs.hasPokemonIncenseTypeProbability == rhs.hasPokemonIncenseTypeProbability) && (!lhs.hasPokemonIncenseTypeProbability || lhs.pokemonIncenseTypeProbability == rhs.pokemonIncenseTypeProbability)
-  fieldCheck = fieldCheck && (lhs.hasStandingTimeBetweenEncountersSeconds == rhs.hasStandingTimeBetweenEncountersSeconds) && (!lhs.hasStandingTimeBetweenEncountersSeconds || lhs.standingTimeBetweenEncountersSeconds == rhs.standingTimeBetweenEncountersSeconds)
-  fieldCheck = fieldCheck && (lhs.hasMovingTimeBetweenEncounterSeconds == rhs.hasMovingTimeBetweenEncounterSeconds) && (!lhs.hasMovingTimeBetweenEncounterSeconds || lhs.movingTimeBetweenEncounterSeconds == rhs.movingTimeBetweenEncounterSeconds)
-  fieldCheck = fieldCheck && (lhs.hasDistanceRequiredForShorterIntervalMeters == rhs.hasDistanceRequiredForShorterIntervalMeters) && (!lhs.hasDistanceRequiredForShorterIntervalMeters || lhs.distanceRequiredForShorterIntervalMeters == rhs.distanceRequiredForShorterIntervalMeters)
-  fieldCheck = fieldCheck && (lhs.hasPokemonAttractedLengthSec == rhs.hasPokemonAttractedLengthSec) && (!lhs.hasPokemonAttractedLengthSec || lhs.pokemonAttractedLengthSec == rhs.pokemonAttractedLengthSec)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes, rhs: Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasAdditionalStorage == rhs.hasAdditionalStorage) && (!lhs.hasAdditionalStorage || lhs.additionalStorage == rhs.additionalStorage)
-  fieldCheck = fieldCheck && (lhs.hasUpgradeType == rhs.hasUpgradeType) && (!lhs.hasUpgradeType || lhs.upgradeType == rhs.upgradeType)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.PokeballAttributes, rhs: Pogoprotos.Settings.Master.Item.PokeballAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasItemEffect == rhs.hasItemEffect) && (!lhs.hasItemEffect || lhs.itemEffect == rhs.itemEffect)
-  fieldCheck = fieldCheck && (lhs.hasCaptureMulti == rhs.hasCaptureMulti) && (!lhs.hasCaptureMulti || lhs.captureMulti == rhs.captureMulti)
-  fieldCheck = fieldCheck && (lhs.hasCaptureMultiEffect == rhs.hasCaptureMultiEffect) && (!lhs.hasCaptureMultiEffect || lhs.captureMultiEffect == rhs.captureMultiEffect)
-  fieldCheck = fieldCheck && (lhs.hasItemEffectMod == rhs.hasItemEffectMod) && (!lhs.hasItemEffectMod || lhs.itemEffectMod == rhs.itemEffectMod)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.PotionAttributes, rhs: Pogoprotos.Settings.Master.Item.PotionAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
-  fieldCheck = fieldCheck && (lhs.hasStaAmount == rhs.hasStaAmount) && (!lhs.hasStaAmount || lhs.staAmount == rhs.staAmount)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
-public func == (lhs: Pogoprotos.Settings.Master.Item.ReviveAttributes, rhs: Pogoprotos.Settings.Master.Item.ReviveAttributes) -> Bool {
-  if (lhs === rhs) {
-    return true
-  }
-  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-  fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
-  fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-  return fieldCheck
-}
-
 public extension Pogoprotos.Settings.Master.Item {
   public struct PogoprotosSettingsMasterItemRoot {
-    public static var sharedInstance : PogoprotosSettingsMasterItemRoot {
-     struct Static {
-         static let instance : PogoprotosSettingsMasterItemRoot = PogoprotosSettingsMasterItemRoot()
-     }
-     return Static.instance
-    }
+    public static let `default` = PogoprotosSettingsMasterItemRoot()
     public var extensionRegistry:ExtensionRegistry
 
     init() {
       extensionRegistry = ExtensionRegistry()
       registerAllExtensions(registry: extensionRegistry)
-      Pogoprotos.Inventory.PogoprotosInventoryRoot.sharedInstance.registerAllExtensions(registry: extensionRegistry)
-      Pogoprotos.Enums.PogoprotosEnumsRoot.sharedInstance.registerAllExtensions(registry: extensionRegistry)
+      Pogoprotos.Inventory.PogoprotosInventoryRoot.default.registerAllExtensions(registry: extensionRegistry)
+      Pogoprotos.Enums.PogoprotosEnumsRoot.default.registerAllExtensions(registry: extensionRegistry)
     }
     public func registerAllExtensions(registry: ExtensionRegistry) {
     }
   }
 
   final public class BattleAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.BattleAttributes, rhs: Pogoprotos.Settings.Master.Item.BattleAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var staPercent:Float = Float(0)
     public fileprivate(set) var hasStaPercent:Bool = false
 
@@ -198,7 +86,7 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasStaPercent {
-        jsonMap["staPercent"] = NSNumber(value:staPercent)
+        jsonMap["staPercent"] = Float(staPercent)
       }
       return jsonMap
     }
@@ -239,7 +127,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.BattleAttributes = Pogoprotos.Settings.Master.Item.BattleAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.BattleAttributes = Pogoprotos.Settings.Master.Item.BattleAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.BattleAttributes {
           return builderResult
       }
@@ -261,10 +149,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.staPercent = value
            }
       }
+      @discardableResult
       public func setStaPercent(_ value:Float) -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
         self.staPercent = value
         return self
       }
+      @discardableResult
       public func clearStaPercent() -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder{
            builderResult.hasStaPercent = false
            builderResult.staPercent = Float(0)
@@ -275,6 +165,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.BattleAttributes()
         return self
@@ -290,6 +181,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.BattleAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.BattleAttributes) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.BattleAttributes() {
          return self
@@ -297,12 +189,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasStaPercent {
              staPercent = other.staPercent
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -323,10 +217,10 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.BattleAttributes.Builder()
-        if let jsonValueStaPercent = jsonMap["staPercent"] as? NSNumber {
-          resultDecodedBuilder.staPercent = jsonValueStaPercent.floatValue
+        if let jsonValueStaPercent = jsonMap["staPercent"] as? Float {
+          resultDecodedBuilder.staPercent = Float(jsonValueStaPercent)
         }
         return resultDecodedBuilder
       }
@@ -342,6 +236,19 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class EggIncubatorAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.EggIncubatorAttributes, rhs: Pogoprotos.Settings.Master.Item.EggIncubatorAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasIncubatorType == rhs.hasIncubatorType) && (!lhs.hasIncubatorType || lhs.incubatorType == rhs.incubatorType)
+      fieldCheck = fieldCheck && (lhs.hasUses == rhs.hasUses) && (!lhs.hasUses || lhs.uses == rhs.uses)
+      fieldCheck = fieldCheck && (lhs.hasDistanceMultiplier == rhs.hasDistanceMultiplier) && (!lhs.hasDistanceMultiplier || lhs.distanceMultiplier == rhs.distanceMultiplier)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var incubatorType:Pogoprotos.Inventory.EggIncubatorType = Pogoprotos.Inventory.EggIncubatorType.incubatorUnset
     public fileprivate(set) var hasIncubatorType:Bool = false
     public fileprivate(set) var uses:Int32 = Int32(0)
@@ -416,10 +323,10 @@ public extension Pogoprotos.Settings.Master.Item {
         jsonMap["incubatorType"] = incubatorType.toString()
       }
       if hasUses {
-        jsonMap["uses"] = NSNumber(value:uses)
+        jsonMap["uses"] = Int(uses)
       }
       if hasDistanceMultiplier {
-        jsonMap["distanceMultiplier"] = NSNumber(value:distanceMultiplier)
+        jsonMap["distanceMultiplier"] = Float(distanceMultiplier)
       }
       return jsonMap
     }
@@ -472,7 +379,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.EggIncubatorAttributes = Pogoprotos.Settings.Master.Item.EggIncubatorAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.EggIncubatorAttributes = Pogoprotos.Settings.Master.Item.EggIncubatorAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes {
           return builderResult
       }
@@ -494,10 +401,12 @@ public extension Pogoprotos.Settings.Master.Item {
                 builderResult.incubatorType = value
             }
         }
+      @discardableResult
         public func setIncubatorType(_ value:Pogoprotos.Inventory.EggIncubatorType) -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
           self.incubatorType = value
           return self
         }
+      @discardableResult
         public func clearIncubatorType() -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
            builderResult.hasIncubatorType = false
            builderResult.incubatorType = .incubatorUnset
@@ -517,10 +426,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.uses = value
            }
       }
+      @discardableResult
       public func setUses(_ value:Int32) -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         self.uses = value
         return self
       }
+      @discardableResult
       public func clearUses() -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder{
            builderResult.hasUses = false
            builderResult.uses = Int32(0)
@@ -540,10 +451,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.distanceMultiplier = value
            }
       }
+      @discardableResult
       public func setDistanceMultiplier(_ value:Float) -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         self.distanceMultiplier = value
         return self
       }
+      @discardableResult
       public func clearDistanceMultiplier() -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder{
            builderResult.hasDistanceMultiplier = false
            builderResult.distanceMultiplier = Float(0)
@@ -554,6 +467,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.EggIncubatorAttributes()
         return self
@@ -569,6 +483,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.EggIncubatorAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.EggIncubatorAttributes) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.EggIncubatorAttributes() {
          return self
@@ -582,12 +497,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasDistanceMultiplier {
              distanceMultiplier = other.distanceMultiplier
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -602,7 +519,7 @@ public extension Pogoprotos.Settings.Master.Item {
             if let enumsincubatorType = Pogoprotos.Inventory.EggIncubatorType(rawValue:valueIntincubatorType){
                  incubatorType = enumsincubatorType
             } else {
-                 _ = try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntincubatorType))
+                 try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntincubatorType))
             }
 
           case 16:
@@ -619,16 +536,16 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder()
         if let jsonValueIncubatorType = jsonMap["incubatorType"] as? String {
           resultDecodedBuilder.incubatorType = try Pogoprotos.Inventory.EggIncubatorType.fromString(str: jsonValueIncubatorType)
         }
-        if let jsonValueUses = jsonMap["uses"] as? NSNumber {
-          resultDecodedBuilder.uses = jsonValueUses.int32Value
+        if let jsonValueUses = jsonMap["uses"] as? Int {
+          resultDecodedBuilder.uses = Int32(jsonValueUses)
         }
-        if let jsonValueDistanceMultiplier = jsonMap["distanceMultiplier"] as? NSNumber {
-          resultDecodedBuilder.distanceMultiplier = jsonValueDistanceMultiplier.floatValue
+        if let jsonValueDistanceMultiplier = jsonMap["distanceMultiplier"] as? Float {
+          resultDecodedBuilder.distanceMultiplier = Float(jsonValueDistanceMultiplier)
         }
         return resultDecodedBuilder
       }
@@ -644,6 +561,18 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class ExperienceBoostAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes, rhs: Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasXpMultiplier == rhs.hasXpMultiplier) && (!lhs.hasXpMultiplier || lhs.xpMultiplier == rhs.xpMultiplier)
+      fieldCheck = fieldCheck && (lhs.hasBoostDurationMs == rhs.hasBoostDurationMs) && (!lhs.hasBoostDurationMs || lhs.boostDurationMs == rhs.boostDurationMs)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var xpMultiplier:Float = Float(0)
     public fileprivate(set) var hasXpMultiplier:Bool = false
 
@@ -707,10 +636,10 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasXpMultiplier {
-        jsonMap["xpMultiplier"] = NSNumber(value:xpMultiplier)
+        jsonMap["xpMultiplier"] = Float(xpMultiplier)
       }
       if hasBoostDurationMs {
-        jsonMap["boostDurationMs"] = NSNumber(value:boostDurationMs)
+        jsonMap["boostDurationMs"] = Int(boostDurationMs)
       }
       return jsonMap
     }
@@ -757,7 +686,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes = Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes = Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes {
           return builderResult
       }
@@ -779,10 +708,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.xpMultiplier = value
            }
       }
+      @discardableResult
       public func setXpMultiplier(_ value:Float) -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         self.xpMultiplier = value
         return self
       }
+      @discardableResult
       public func clearXpMultiplier() -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder{
            builderResult.hasXpMultiplier = false
            builderResult.xpMultiplier = Float(0)
@@ -802,10 +733,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.boostDurationMs = value
            }
       }
+      @discardableResult
       public func setBoostDurationMs(_ value:Int32) -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         self.boostDurationMs = value
         return self
       }
+      @discardableResult
       public func clearBoostDurationMs() -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder{
            builderResult.hasBoostDurationMs = false
            builderResult.boostDurationMs = Int32(0)
@@ -816,6 +749,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes()
         return self
@@ -831,6 +765,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes() {
          return self
@@ -841,12 +776,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasBoostDurationMs {
              boostDurationMs = other.boostDurationMs
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -870,13 +807,13 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder()
-        if let jsonValueXpMultiplier = jsonMap["xpMultiplier"] as? NSNumber {
-          resultDecodedBuilder.xpMultiplier = jsonValueXpMultiplier.floatValue
+        if let jsonValueXpMultiplier = jsonMap["xpMultiplier"] as? Float {
+          resultDecodedBuilder.xpMultiplier = Float(jsonValueXpMultiplier)
         }
-        if let jsonValueBoostDurationMs = jsonMap["boostDurationMs"] as? NSNumber {
-          resultDecodedBuilder.boostDurationMs = jsonValueBoostDurationMs.int32Value
+        if let jsonValueBoostDurationMs = jsonMap["boostDurationMs"] as? Int {
+          resultDecodedBuilder.boostDurationMs = Int32(jsonValueBoostDurationMs)
         }
         return resultDecodedBuilder
       }
@@ -892,6 +829,19 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class FoodAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.FoodAttributes, rhs: Pogoprotos.Settings.Master.Item.FoodAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.itemEffect == rhs.itemEffect)
+      fieldCheck = fieldCheck && (lhs.itemEffectPercent == rhs.itemEffectPercent)
+      fieldCheck = fieldCheck && (lhs.hasGrowthPercent == rhs.hasGrowthPercent) && (!lhs.hasGrowthPercent || lhs.growthPercent == rhs.growthPercent)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     private var itemEffectMemoizedSerializedSize:Int32 = 0
     public fileprivate(set) var itemEffect:Array<Pogoprotos.Enums.ItemEffect> = Array<Pogoprotos.Enums.ItemEffect>()
     public fileprivate(set) var itemEffectPercent:Array<Float> = Array<Float>()
@@ -906,8 +856,12 @@ public extension Pogoprotos.Settings.Master.Item {
      return true
     }
     override public func writeTo(codedOutputStream: CodedOutputStream) throws {
+      if !itemEffect.isEmpty {
+        try codedOutputStream.writeRawVarint32(value: 10)
+        try codedOutputStream.writeRawVarint32(value: itemEffectMemoizedSerializedSize)
+      }
       for oneValueOfitemEffect in itemEffect {
-          try codedOutputStream.writeEnum(fieldNumber: 1, value:oneValueOfitemEffect.rawValue)
+          try codedOutputStream.writeEnumNoTag(value: oneValueOfitemEffect.rawValue)
       }
       if !itemEffectPercent.isEmpty {
         try codedOutputStream.writeRawVarint32(value: 18)
@@ -933,7 +887,11 @@ public extension Pogoprotos.Settings.Master.Item {
           dataSizeitemEffect += oneValueOfitemEffect.rawValue.computeEnumSizeNoTag()
       }
       serialize_size += dataSizeitemEffect
-      serialize_size += (1 * Int32(itemEffect.count))
+      if !itemEffect.isEmpty {
+        serialize_size += 1
+        serialize_size += dataSizeitemEffect.computeRawVarint32Size()
+      }
+      itemEffectMemoizedSerializedSize = dataSizeitemEffect
       var dataSizeItemEffectPercent:Int32 = 0
       dataSizeItemEffectPercent = 4 * Int32(itemEffectPercent.count)
       serialize_size += dataSizeItemEffectPercent
@@ -981,14 +939,14 @@ public extension Pogoprotos.Settings.Master.Item {
         jsonMap["itemEffect"] = jsonArrayItemEffect
       }
       if !itemEffectPercent.isEmpty {
-        var jsonArrayItemEffectPercent:Array<NSNumber> = []
+        var jsonArrayItemEffectPercent:Array<Float> = []
           for oneValueItemEffectPercent in itemEffectPercent {
-            jsonArrayItemEffectPercent.append(NSNumber(value:oneValueItemEffectPercent))
+            jsonArrayItemEffectPercent.append(Float(oneValueItemEffectPercent))
           }
         jsonMap["itemEffectPercent"] = jsonArrayItemEffectPercent
       }
       if hasGrowthPercent {
-        jsonMap["growthPercent"] = NSNumber(value:growthPercent)
+        jsonMap["growthPercent"] = Float(growthPercent)
       }
       return jsonMap
     }
@@ -1045,7 +1003,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.FoodAttributes = Pogoprotos.Settings.Master.Item.FoodAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.FoodAttributes = Pogoprotos.Settings.Master.Item.FoodAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.FoodAttributes {
           return builderResult
       }
@@ -1061,10 +1019,12 @@ public extension Pogoprotos.Settings.Master.Item {
               builderResult.itemEffect = value
           }
       }
+      @discardableResult
       public func setItemEffect(_ value:Array<Pogoprotos.Enums.ItemEffect>) -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         self.itemEffect = value
         return self
       }
+      @discardableResult
       public func clearItemEffect() -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         builderResult.itemEffect.removeAll(keepingCapacity: false)
         return self
@@ -1077,10 +1037,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.itemEffectPercent = array
            }
       }
+      @discardableResult
       public func setItemEffectPercent(_ value:Array<Float>) -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         self.itemEffectPercent = value
         return self
       }
+      @discardableResult
       public func clearItemEffectPercent() -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
          builderResult.itemEffectPercent.removeAll(keepingCapacity: false)
          return self
@@ -1099,10 +1061,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.growthPercent = value
            }
       }
+      @discardableResult
       public func setGrowthPercent(_ value:Float) -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         self.growthPercent = value
         return self
       }
+      @discardableResult
       public func clearGrowthPercent() -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder{
            builderResult.hasGrowthPercent = false
            builderResult.growthPercent = Float(0)
@@ -1113,6 +1077,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.FoodAttributes()
         return self
@@ -1128,6 +1093,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.FoodAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.FoodAttributes) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.FoodAttributes() {
          return self
@@ -1141,12 +1107,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasGrowthPercent {
              growthPercent = other.growthPercent
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -1156,13 +1124,18 @@ public extension Pogoprotos.Settings.Master.Item {
             self.unknownFields = try unknownFieldsBuilder.build()
             return self
 
-          case 8:
+          case 10:
+            let length = Int(try codedInputStream.readRawVarint32())
+            let oldLimit = try codedInputStream.pushLimit(byteLimit: length)
+            while codedInputStream.bytesUntilLimit() > 0 {
             let valueIntitemEffect = try codedInputStream.readEnum()
             if let enumsitemEffect = Pogoprotos.Enums.ItemEffect(rawValue:valueIntitemEffect) {
                  builderResult.itemEffect.append(enumsitemEffect)
             } else {
-                 _ = try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntitemEffect))
+                 try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntitemEffect))
             }
+            }
+            codedInputStream.popLimit(oldLimit: oldLimit)
 
           case 18:
             let length = Int(try codedInputStream.readRawVarint32())
@@ -1183,7 +1156,7 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.FoodAttributes.Builder()
         if let jsonValueItemEffect = jsonMap["itemEffect"] as? Array<String> {
           var jsonArrayItemEffect:Array<Pogoprotos.Enums.ItemEffect> = []
@@ -1193,15 +1166,15 @@ public extension Pogoprotos.Settings.Master.Item {
           }
           resultDecodedBuilder.itemEffect = jsonArrayItemEffect
         }
-        if let jsonValueItemEffectPercent = jsonMap["itemEffectPercent"] as? Array<NSNumber> {
+        if let jsonValueItemEffectPercent = jsonMap["itemEffectPercent"] as? Array<Float> {
           var jsonArrayItemEffectPercent:Array<Float> = []
           for oneValueItemEffectPercent in jsonValueItemEffectPercent {
-            jsonArrayItemEffectPercent.append(oneValueItemEffectPercent.floatValue)
+            jsonArrayItemEffectPercent.append(Float(oneValueItemEffectPercent))
           }
           resultDecodedBuilder.itemEffectPercent = jsonArrayItemEffectPercent
         }
-        if let jsonValueGrowthPercent = jsonMap["growthPercent"] as? NSNumber {
-          resultDecodedBuilder.growthPercent = jsonValueGrowthPercent.floatValue
+        if let jsonValueGrowthPercent = jsonMap["growthPercent"] as? Float {
+          resultDecodedBuilder.growthPercent = Float(jsonValueGrowthPercent)
         }
         return resultDecodedBuilder
       }
@@ -1217,6 +1190,18 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class FortModifierAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.FortModifierAttributes, rhs: Pogoprotos.Settings.Master.Item.FortModifierAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasModifierLifetimeSeconds == rhs.hasModifierLifetimeSeconds) && (!lhs.hasModifierLifetimeSeconds || lhs.modifierLifetimeSeconds == rhs.modifierLifetimeSeconds)
+      fieldCheck = fieldCheck && (lhs.hasTroyDiskNumPokemonSpawned == rhs.hasTroyDiskNumPokemonSpawned) && (!lhs.hasTroyDiskNumPokemonSpawned || lhs.troyDiskNumPokemonSpawned == rhs.troyDiskNumPokemonSpawned)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var modifierLifetimeSeconds:Int32 = Int32(0)
     public fileprivate(set) var hasModifierLifetimeSeconds:Bool = false
 
@@ -1280,10 +1265,10 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasModifierLifetimeSeconds {
-        jsonMap["modifierLifetimeSeconds"] = NSNumber(value:modifierLifetimeSeconds)
+        jsonMap["modifierLifetimeSeconds"] = Int(modifierLifetimeSeconds)
       }
       if hasTroyDiskNumPokemonSpawned {
-        jsonMap["troyDiskNumPokemonSpawned"] = NSNumber(value:troyDiskNumPokemonSpawned)
+        jsonMap["troyDiskNumPokemonSpawned"] = Int(troyDiskNumPokemonSpawned)
       }
       return jsonMap
     }
@@ -1330,7 +1315,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.FortModifierAttributes = Pogoprotos.Settings.Master.Item.FortModifierAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.FortModifierAttributes = Pogoprotos.Settings.Master.Item.FortModifierAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.FortModifierAttributes {
           return builderResult
       }
@@ -1352,10 +1337,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.modifierLifetimeSeconds = value
            }
       }
+      @discardableResult
       public func setModifierLifetimeSeconds(_ value:Int32) -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         self.modifierLifetimeSeconds = value
         return self
       }
+      @discardableResult
       public func clearModifierLifetimeSeconds() -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder{
            builderResult.hasModifierLifetimeSeconds = false
            builderResult.modifierLifetimeSeconds = Int32(0)
@@ -1375,10 +1362,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.troyDiskNumPokemonSpawned = value
            }
       }
+      @discardableResult
       public func setTroyDiskNumPokemonSpawned(_ value:Int32) -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         self.troyDiskNumPokemonSpawned = value
         return self
       }
+      @discardableResult
       public func clearTroyDiskNumPokemonSpawned() -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder{
            builderResult.hasTroyDiskNumPokemonSpawned = false
            builderResult.troyDiskNumPokemonSpawned = Int32(0)
@@ -1389,6 +1378,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.FortModifierAttributes()
         return self
@@ -1404,6 +1394,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.FortModifierAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.FortModifierAttributes) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.FortModifierAttributes() {
          return self
@@ -1414,12 +1405,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasTroyDiskNumPokemonSpawned {
              troyDiskNumPokemonSpawned = other.troyDiskNumPokemonSpawned
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -1443,13 +1436,13 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder()
-        if let jsonValueModifierLifetimeSeconds = jsonMap["modifierLifetimeSeconds"] as? NSNumber {
-          resultDecodedBuilder.modifierLifetimeSeconds = jsonValueModifierLifetimeSeconds.int32Value
+        if let jsonValueModifierLifetimeSeconds = jsonMap["modifierLifetimeSeconds"] as? Int {
+          resultDecodedBuilder.modifierLifetimeSeconds = Int32(jsonValueModifierLifetimeSeconds)
         }
-        if let jsonValueTroyDiskNumPokemonSpawned = jsonMap["troyDiskNumPokemonSpawned"] as? NSNumber {
-          resultDecodedBuilder.troyDiskNumPokemonSpawned = jsonValueTroyDiskNumPokemonSpawned.int32Value
+        if let jsonValueTroyDiskNumPokemonSpawned = jsonMap["troyDiskNumPokemonSpawned"] as? Int {
+          resultDecodedBuilder.troyDiskNumPokemonSpawned = Int32(jsonValueTroyDiskNumPokemonSpawned)
         }
         return resultDecodedBuilder
       }
@@ -1465,6 +1458,23 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class IncenseAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.IncenseAttributes, rhs: Pogoprotos.Settings.Master.Item.IncenseAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasIncenseLifetimeSeconds == rhs.hasIncenseLifetimeSeconds) && (!lhs.hasIncenseLifetimeSeconds || lhs.incenseLifetimeSeconds == rhs.incenseLifetimeSeconds)
+      fieldCheck = fieldCheck && (lhs.pokemonType == rhs.pokemonType)
+      fieldCheck = fieldCheck && (lhs.hasPokemonIncenseTypeProbability == rhs.hasPokemonIncenseTypeProbability) && (!lhs.hasPokemonIncenseTypeProbability || lhs.pokemonIncenseTypeProbability == rhs.pokemonIncenseTypeProbability)
+      fieldCheck = fieldCheck && (lhs.hasStandingTimeBetweenEncountersSeconds == rhs.hasStandingTimeBetweenEncountersSeconds) && (!lhs.hasStandingTimeBetweenEncountersSeconds || lhs.standingTimeBetweenEncountersSeconds == rhs.standingTimeBetweenEncountersSeconds)
+      fieldCheck = fieldCheck && (lhs.hasMovingTimeBetweenEncounterSeconds == rhs.hasMovingTimeBetweenEncounterSeconds) && (!lhs.hasMovingTimeBetweenEncounterSeconds || lhs.movingTimeBetweenEncounterSeconds == rhs.movingTimeBetweenEncounterSeconds)
+      fieldCheck = fieldCheck && (lhs.hasDistanceRequiredForShorterIntervalMeters == rhs.hasDistanceRequiredForShorterIntervalMeters) && (!lhs.hasDistanceRequiredForShorterIntervalMeters || lhs.distanceRequiredForShorterIntervalMeters == rhs.distanceRequiredForShorterIntervalMeters)
+      fieldCheck = fieldCheck && (lhs.hasPokemonAttractedLengthSec == rhs.hasPokemonAttractedLengthSec) && (!lhs.hasPokemonAttractedLengthSec || lhs.pokemonAttractedLengthSec == rhs.pokemonAttractedLengthSec)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var incenseLifetimeSeconds:Int32 = Int32(0)
     public fileprivate(set) var hasIncenseLifetimeSeconds:Bool = false
 
@@ -1495,8 +1505,12 @@ public extension Pogoprotos.Settings.Master.Item {
       if hasIncenseLifetimeSeconds {
         try codedOutputStream.writeInt32(fieldNumber: 1, value:incenseLifetimeSeconds)
       }
+      if !pokemonType.isEmpty {
+        try codedOutputStream.writeRawVarint32(value: 18)
+        try codedOutputStream.writeRawVarint32(value: pokemonTypeMemoizedSerializedSize)
+      }
       for oneValueOfpokemonType in pokemonType {
-          try codedOutputStream.writeEnum(fieldNumber: 2, value:oneValueOfpokemonType.rawValue)
+          try codedOutputStream.writeEnumNoTag(value: oneValueOfpokemonType.rawValue)
       }
       if hasPokemonIncenseTypeProbability {
         try codedOutputStream.writeFloat(fieldNumber: 3, value:pokemonIncenseTypeProbability)
@@ -1530,7 +1544,11 @@ public extension Pogoprotos.Settings.Master.Item {
           dataSizepokemonType += oneValueOfpokemonType.rawValue.computeEnumSizeNoTag()
       }
       serialize_size += dataSizepokemonType
-      serialize_size += (1 * Int32(pokemonType.count))
+      if !pokemonType.isEmpty {
+        serialize_size += 1
+        serialize_size += dataSizepokemonType.computeRawVarint32Size()
+      }
+      pokemonTypeMemoizedSerializedSize = dataSizepokemonType
       if hasPokemonIncenseTypeProbability {
         serialize_size += pokemonIncenseTypeProbability.computeFloatSize(fieldNumber: 3)
       }
@@ -1575,7 +1593,7 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasIncenseLifetimeSeconds {
-        jsonMap["incenseLifetimeSeconds"] = NSNumber(value:incenseLifetimeSeconds)
+        jsonMap["incenseLifetimeSeconds"] = Int(incenseLifetimeSeconds)
       }
       if !pokemonType.isEmpty {
         var jsonArrayPokemonType:Array<String> = []
@@ -1585,19 +1603,19 @@ public extension Pogoprotos.Settings.Master.Item {
         jsonMap["pokemonType"] = jsonArrayPokemonType
       }
       if hasPokemonIncenseTypeProbability {
-        jsonMap["pokemonIncenseTypeProbability"] = NSNumber(value:pokemonIncenseTypeProbability)
+        jsonMap["pokemonIncenseTypeProbability"] = Float(pokemonIncenseTypeProbability)
       }
       if hasStandingTimeBetweenEncountersSeconds {
-        jsonMap["standingTimeBetweenEncountersSeconds"] = NSNumber(value:standingTimeBetweenEncountersSeconds)
+        jsonMap["standingTimeBetweenEncountersSeconds"] = Int(standingTimeBetweenEncountersSeconds)
       }
       if hasMovingTimeBetweenEncounterSeconds {
-        jsonMap["movingTimeBetweenEncounterSeconds"] = NSNumber(value:movingTimeBetweenEncounterSeconds)
+        jsonMap["movingTimeBetweenEncounterSeconds"] = Int(movingTimeBetweenEncounterSeconds)
       }
       if hasDistanceRequiredForShorterIntervalMeters {
-        jsonMap["distanceRequiredForShorterIntervalMeters"] = NSNumber(value:distanceRequiredForShorterIntervalMeters)
+        jsonMap["distanceRequiredForShorterIntervalMeters"] = Int(distanceRequiredForShorterIntervalMeters)
       }
       if hasPokemonAttractedLengthSec {
-        jsonMap["pokemonAttractedLengthSec"] = NSNumber(value:pokemonAttractedLengthSec)
+        jsonMap["pokemonAttractedLengthSec"] = Int(pokemonAttractedLengthSec)
       }
       return jsonMap
     }
@@ -1676,7 +1694,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.IncenseAttributes = Pogoprotos.Settings.Master.Item.IncenseAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.IncenseAttributes = Pogoprotos.Settings.Master.Item.IncenseAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.IncenseAttributes {
           return builderResult
       }
@@ -1698,10 +1716,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.incenseLifetimeSeconds = value
            }
       }
+      @discardableResult
       public func setIncenseLifetimeSeconds(_ value:Int32) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.incenseLifetimeSeconds = value
         return self
       }
+      @discardableResult
       public func clearIncenseLifetimeSeconds() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasIncenseLifetimeSeconds = false
            builderResult.incenseLifetimeSeconds = Int32(0)
@@ -1715,10 +1735,12 @@ public extension Pogoprotos.Settings.Master.Item {
               builderResult.pokemonType = value
           }
       }
+      @discardableResult
       public func setPokemonType(_ value:Array<Pogoprotos.Enums.PokemonType>) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.pokemonType = value
         return self
       }
+      @discardableResult
       public func clearPokemonType() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         builderResult.pokemonType.removeAll(keepingCapacity: false)
         return self
@@ -1737,10 +1759,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.pokemonIncenseTypeProbability = value
            }
       }
+      @discardableResult
       public func setPokemonIncenseTypeProbability(_ value:Float) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.pokemonIncenseTypeProbability = value
         return self
       }
+      @discardableResult
       public func clearPokemonIncenseTypeProbability() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasPokemonIncenseTypeProbability = false
            builderResult.pokemonIncenseTypeProbability = Float(0)
@@ -1760,10 +1784,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.standingTimeBetweenEncountersSeconds = value
            }
       }
+      @discardableResult
       public func setStandingTimeBetweenEncountersSeconds(_ value:Int32) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.standingTimeBetweenEncountersSeconds = value
         return self
       }
+      @discardableResult
       public func clearStandingTimeBetweenEncountersSeconds() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasStandingTimeBetweenEncountersSeconds = false
            builderResult.standingTimeBetweenEncountersSeconds = Int32(0)
@@ -1783,10 +1809,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.movingTimeBetweenEncounterSeconds = value
            }
       }
+      @discardableResult
       public func setMovingTimeBetweenEncounterSeconds(_ value:Int32) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.movingTimeBetweenEncounterSeconds = value
         return self
       }
+      @discardableResult
       public func clearMovingTimeBetweenEncounterSeconds() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasMovingTimeBetweenEncounterSeconds = false
            builderResult.movingTimeBetweenEncounterSeconds = Int32(0)
@@ -1806,10 +1834,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.distanceRequiredForShorterIntervalMeters = value
            }
       }
+      @discardableResult
       public func setDistanceRequiredForShorterIntervalMeters(_ value:Int32) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.distanceRequiredForShorterIntervalMeters = value
         return self
       }
+      @discardableResult
       public func clearDistanceRequiredForShorterIntervalMeters() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasDistanceRequiredForShorterIntervalMeters = false
            builderResult.distanceRequiredForShorterIntervalMeters = Int32(0)
@@ -1829,10 +1859,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.pokemonAttractedLengthSec = value
            }
       }
+      @discardableResult
       public func setPokemonAttractedLengthSec(_ value:Int32) -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         self.pokemonAttractedLengthSec = value
         return self
       }
+      @discardableResult
       public func clearPokemonAttractedLengthSec() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder{
            builderResult.hasPokemonAttractedLengthSec = false
            builderResult.pokemonAttractedLengthSec = Int32(0)
@@ -1843,6 +1875,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.IncenseAttributes()
         return self
@@ -1858,6 +1891,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.IncenseAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.IncenseAttributes) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.IncenseAttributes() {
          return self
@@ -1883,12 +1917,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasPokemonAttractedLengthSec {
              pokemonAttractedLengthSec = other.pokemonAttractedLengthSec
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -1901,13 +1937,18 @@ public extension Pogoprotos.Settings.Master.Item {
           case 8:
             incenseLifetimeSeconds = try codedInputStream.readInt32()
 
-          case 16:
+          case 18:
+            let length = Int(try codedInputStream.readRawVarint32())
+            let oldLimit = try codedInputStream.pushLimit(byteLimit: length)
+            while codedInputStream.bytesUntilLimit() > 0 {
             let valueIntpokemonType = try codedInputStream.readEnum()
             if let enumspokemonType = Pogoprotos.Enums.PokemonType(rawValue:valueIntpokemonType) {
                  builderResult.pokemonType.append(enumspokemonType)
             } else {
-                 _ = try unknownFieldsBuilder.mergeVarintField(fieldNumber: 2, value:Int64(valueIntpokemonType))
+                 try unknownFieldsBuilder.mergeVarintField(fieldNumber: 2, value:Int64(valueIntpokemonType))
             }
+            }
+            codedInputStream.popLimit(oldLimit: oldLimit)
 
           case 29:
             pokemonIncenseTypeProbability = try codedInputStream.readFloat()
@@ -1932,10 +1973,10 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder()
-        if let jsonValueIncenseLifetimeSeconds = jsonMap["incenseLifetimeSeconds"] as? NSNumber {
-          resultDecodedBuilder.incenseLifetimeSeconds = jsonValueIncenseLifetimeSeconds.int32Value
+        if let jsonValueIncenseLifetimeSeconds = jsonMap["incenseLifetimeSeconds"] as? Int {
+          resultDecodedBuilder.incenseLifetimeSeconds = Int32(jsonValueIncenseLifetimeSeconds)
         }
         if let jsonValuePokemonType = jsonMap["pokemonType"] as? Array<String> {
           var jsonArrayPokemonType:Array<Pogoprotos.Enums.PokemonType> = []
@@ -1945,20 +1986,20 @@ public extension Pogoprotos.Settings.Master.Item {
           }
           resultDecodedBuilder.pokemonType = jsonArrayPokemonType
         }
-        if let jsonValuePokemonIncenseTypeProbability = jsonMap["pokemonIncenseTypeProbability"] as? NSNumber {
-          resultDecodedBuilder.pokemonIncenseTypeProbability = jsonValuePokemonIncenseTypeProbability.floatValue
+        if let jsonValuePokemonIncenseTypeProbability = jsonMap["pokemonIncenseTypeProbability"] as? Float {
+          resultDecodedBuilder.pokemonIncenseTypeProbability = Float(jsonValuePokemonIncenseTypeProbability)
         }
-        if let jsonValueStandingTimeBetweenEncountersSeconds = jsonMap["standingTimeBetweenEncountersSeconds"] as? NSNumber {
-          resultDecodedBuilder.standingTimeBetweenEncountersSeconds = jsonValueStandingTimeBetweenEncountersSeconds.int32Value
+        if let jsonValueStandingTimeBetweenEncountersSeconds = jsonMap["standingTimeBetweenEncountersSeconds"] as? Int {
+          resultDecodedBuilder.standingTimeBetweenEncountersSeconds = Int32(jsonValueStandingTimeBetweenEncountersSeconds)
         }
-        if let jsonValueMovingTimeBetweenEncounterSeconds = jsonMap["movingTimeBetweenEncounterSeconds"] as? NSNumber {
-          resultDecodedBuilder.movingTimeBetweenEncounterSeconds = jsonValueMovingTimeBetweenEncounterSeconds.int32Value
+        if let jsonValueMovingTimeBetweenEncounterSeconds = jsonMap["movingTimeBetweenEncounterSeconds"] as? Int {
+          resultDecodedBuilder.movingTimeBetweenEncounterSeconds = Int32(jsonValueMovingTimeBetweenEncounterSeconds)
         }
-        if let jsonValueDistanceRequiredForShorterIntervalMeters = jsonMap["distanceRequiredForShorterIntervalMeters"] as? NSNumber {
-          resultDecodedBuilder.distanceRequiredForShorterIntervalMeters = jsonValueDistanceRequiredForShorterIntervalMeters.int32Value
+        if let jsonValueDistanceRequiredForShorterIntervalMeters = jsonMap["distanceRequiredForShorterIntervalMeters"] as? Int {
+          resultDecodedBuilder.distanceRequiredForShorterIntervalMeters = Int32(jsonValueDistanceRequiredForShorterIntervalMeters)
         }
-        if let jsonValuePokemonAttractedLengthSec = jsonMap["pokemonAttractedLengthSec"] as? NSNumber {
-          resultDecodedBuilder.pokemonAttractedLengthSec = jsonValuePokemonAttractedLengthSec.int32Value
+        if let jsonValuePokemonAttractedLengthSec = jsonMap["pokemonAttractedLengthSec"] as? Int {
+          resultDecodedBuilder.pokemonAttractedLengthSec = Int32(jsonValuePokemonAttractedLengthSec)
         }
         return resultDecodedBuilder
       }
@@ -1974,6 +2015,18 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class InventoryUpgradeAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes, rhs: Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasAdditionalStorage == rhs.hasAdditionalStorage) && (!lhs.hasAdditionalStorage || lhs.additionalStorage == rhs.additionalStorage)
+      fieldCheck = fieldCheck && (lhs.hasUpgradeType == rhs.hasUpgradeType) && (!lhs.hasUpgradeType || lhs.upgradeType == rhs.upgradeType)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var additionalStorage:Int32 = Int32(0)
     public fileprivate(set) var hasAdditionalStorage:Bool = false
 
@@ -2036,7 +2089,7 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasAdditionalStorage {
-        jsonMap["additionalStorage"] = NSNumber(value:additionalStorage)
+        jsonMap["additionalStorage"] = Int(additionalStorage)
       }
       if hasUpgradeType {
         jsonMap["upgradeType"] = upgradeType.toString()
@@ -2086,7 +2139,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes = Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes = Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes {
           return builderResult
       }
@@ -2108,10 +2161,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.additionalStorage = value
            }
       }
+      @discardableResult
       public func setAdditionalStorage(_ value:Int32) -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
         self.additionalStorage = value
         return self
       }
+      @discardableResult
       public func clearAdditionalStorage() -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder{
            builderResult.hasAdditionalStorage = false
            builderResult.additionalStorage = Int32(0)
@@ -2131,10 +2186,12 @@ public extension Pogoprotos.Settings.Master.Item {
                 builderResult.upgradeType = value
             }
         }
+      @discardableResult
         public func setUpgradeType(_ value:Pogoprotos.Inventory.InventoryUpgradeType) -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
           self.upgradeType = value
           return self
         }
+      @discardableResult
         public func clearUpgradeType() -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
            builderResult.hasUpgradeType = false
            builderResult.upgradeType = .upgradeUnset
@@ -2145,6 +2202,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes()
         return self
@@ -2160,6 +2218,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes() {
          return self
@@ -2170,12 +2229,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasUpgradeType {
              upgradeType = other.upgradeType
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -2193,7 +2254,7 @@ public extension Pogoprotos.Settings.Master.Item {
             if let enumsupgradeType = Pogoprotos.Inventory.InventoryUpgradeType(rawValue:valueIntupgradeType){
                  upgradeType = enumsupgradeType
             } else {
-                 _ = try unknownFieldsBuilder.mergeVarintField(fieldNumber: 2, value:Int64(valueIntupgradeType))
+                 try unknownFieldsBuilder.mergeVarintField(fieldNumber: 2, value:Int64(valueIntupgradeType))
             }
 
           default:
@@ -2204,10 +2265,10 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder()
-        if let jsonValueAdditionalStorage = jsonMap["additionalStorage"] as? NSNumber {
-          resultDecodedBuilder.additionalStorage = jsonValueAdditionalStorage.int32Value
+        if let jsonValueAdditionalStorage = jsonMap["additionalStorage"] as? Int {
+          resultDecodedBuilder.additionalStorage = Int32(jsonValueAdditionalStorage)
         }
         if let jsonValueUpgradeType = jsonMap["upgradeType"] as? String {
           resultDecodedBuilder.upgradeType = try Pogoprotos.Inventory.InventoryUpgradeType.fromString(str: jsonValueUpgradeType)
@@ -2226,6 +2287,20 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class PokeballAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.PokeballAttributes, rhs: Pogoprotos.Settings.Master.Item.PokeballAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasItemEffect == rhs.hasItemEffect) && (!lhs.hasItemEffect || lhs.itemEffect == rhs.itemEffect)
+      fieldCheck = fieldCheck && (lhs.hasCaptureMulti == rhs.hasCaptureMulti) && (!lhs.hasCaptureMulti || lhs.captureMulti == rhs.captureMulti)
+      fieldCheck = fieldCheck && (lhs.hasCaptureMultiEffect == rhs.hasCaptureMultiEffect) && (!lhs.hasCaptureMultiEffect || lhs.captureMultiEffect == rhs.captureMultiEffect)
+      fieldCheck = fieldCheck && (lhs.hasItemEffectMod == rhs.hasItemEffectMod) && (!lhs.hasItemEffectMod || lhs.itemEffectMod == rhs.itemEffectMod)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var itemEffect:Pogoprotos.Enums.ItemEffect = Pogoprotos.Enums.ItemEffect.itemEffectNone
     public fileprivate(set) var hasItemEffect:Bool = false
     public fileprivate(set) var captureMulti:Float = Float(0)
@@ -2309,13 +2384,13 @@ public extension Pogoprotos.Settings.Master.Item {
         jsonMap["itemEffect"] = itemEffect.toString()
       }
       if hasCaptureMulti {
-        jsonMap["captureMulti"] = NSNumber(value:captureMulti)
+        jsonMap["captureMulti"] = Float(captureMulti)
       }
       if hasCaptureMultiEffect {
-        jsonMap["captureMultiEffect"] = NSNumber(value:captureMultiEffect)
+        jsonMap["captureMultiEffect"] = Float(captureMultiEffect)
       }
       if hasItemEffectMod {
-        jsonMap["itemEffectMod"] = NSNumber(value:itemEffectMod)
+        jsonMap["itemEffectMod"] = Float(itemEffectMod)
       }
       return jsonMap
     }
@@ -2374,7 +2449,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.PokeballAttributes = Pogoprotos.Settings.Master.Item.PokeballAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.PokeballAttributes = Pogoprotos.Settings.Master.Item.PokeballAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.PokeballAttributes {
           return builderResult
       }
@@ -2396,10 +2471,12 @@ public extension Pogoprotos.Settings.Master.Item {
                 builderResult.itemEffect = value
             }
         }
+      @discardableResult
         public func setItemEffect(_ value:Pogoprotos.Enums.ItemEffect) -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
           self.itemEffect = value
           return self
         }
+      @discardableResult
         public func clearItemEffect() -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
            builderResult.hasItemEffect = false
            builderResult.itemEffect = .itemEffectNone
@@ -2419,10 +2496,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.captureMulti = value
            }
       }
+      @discardableResult
       public func setCaptureMulti(_ value:Float) -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         self.captureMulti = value
         return self
       }
+      @discardableResult
       public func clearCaptureMulti() -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder{
            builderResult.hasCaptureMulti = false
            builderResult.captureMulti = Float(0)
@@ -2442,10 +2521,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.captureMultiEffect = value
            }
       }
+      @discardableResult
       public func setCaptureMultiEffect(_ value:Float) -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         self.captureMultiEffect = value
         return self
       }
+      @discardableResult
       public func clearCaptureMultiEffect() -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder{
            builderResult.hasCaptureMultiEffect = false
            builderResult.captureMultiEffect = Float(0)
@@ -2465,10 +2546,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.itemEffectMod = value
            }
       }
+      @discardableResult
       public func setItemEffectMod(_ value:Float) -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         self.itemEffectMod = value
         return self
       }
+      @discardableResult
       public func clearItemEffectMod() -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder{
            builderResult.hasItemEffectMod = false
            builderResult.itemEffectMod = Float(0)
@@ -2479,6 +2562,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.PokeballAttributes()
         return self
@@ -2494,6 +2578,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.PokeballAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.PokeballAttributes) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.PokeballAttributes() {
          return self
@@ -2510,12 +2595,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasItemEffectMod {
              itemEffectMod = other.itemEffectMod
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -2530,7 +2617,7 @@ public extension Pogoprotos.Settings.Master.Item {
             if let enumsitemEffect = Pogoprotos.Enums.ItemEffect(rawValue:valueIntitemEffect){
                  itemEffect = enumsitemEffect
             } else {
-                 _ = try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntitemEffect))
+                 try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueIntitemEffect))
             }
 
           case 21:
@@ -2550,19 +2637,19 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder()
         if let jsonValueItemEffect = jsonMap["itemEffect"] as? String {
           resultDecodedBuilder.itemEffect = try Pogoprotos.Enums.ItemEffect.fromString(str: jsonValueItemEffect)
         }
-        if let jsonValueCaptureMulti = jsonMap["captureMulti"] as? NSNumber {
-          resultDecodedBuilder.captureMulti = jsonValueCaptureMulti.floatValue
+        if let jsonValueCaptureMulti = jsonMap["captureMulti"] as? Float {
+          resultDecodedBuilder.captureMulti = Float(jsonValueCaptureMulti)
         }
-        if let jsonValueCaptureMultiEffect = jsonMap["captureMultiEffect"] as? NSNumber {
-          resultDecodedBuilder.captureMultiEffect = jsonValueCaptureMultiEffect.floatValue
+        if let jsonValueCaptureMultiEffect = jsonMap["captureMultiEffect"] as? Float {
+          resultDecodedBuilder.captureMultiEffect = Float(jsonValueCaptureMultiEffect)
         }
-        if let jsonValueItemEffectMod = jsonMap["itemEffectMod"] as? NSNumber {
-          resultDecodedBuilder.itemEffectMod = jsonValueItemEffectMod.floatValue
+        if let jsonValueItemEffectMod = jsonMap["itemEffectMod"] as? Float {
+          resultDecodedBuilder.itemEffectMod = Float(jsonValueItemEffectMod)
         }
         return resultDecodedBuilder
       }
@@ -2578,6 +2665,18 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class PotionAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.PotionAttributes, rhs: Pogoprotos.Settings.Master.Item.PotionAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
+      fieldCheck = fieldCheck && (lhs.hasStaAmount == rhs.hasStaAmount) && (!lhs.hasStaAmount || lhs.staAmount == rhs.staAmount)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var staPercent:Float = Float(0)
     public fileprivate(set) var hasStaPercent:Bool = false
 
@@ -2641,10 +2740,10 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasStaPercent {
-        jsonMap["staPercent"] = NSNumber(value:staPercent)
+        jsonMap["staPercent"] = Float(staPercent)
       }
       if hasStaAmount {
-        jsonMap["staAmount"] = NSNumber(value:staAmount)
+        jsonMap["staAmount"] = Int(staAmount)
       }
       return jsonMap
     }
@@ -2691,7 +2790,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.PotionAttributes = Pogoprotos.Settings.Master.Item.PotionAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.PotionAttributes = Pogoprotos.Settings.Master.Item.PotionAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.PotionAttributes {
           return builderResult
       }
@@ -2713,10 +2812,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.staPercent = value
            }
       }
+      @discardableResult
       public func setStaPercent(_ value:Float) -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         self.staPercent = value
         return self
       }
+      @discardableResult
       public func clearStaPercent() -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder{
            builderResult.hasStaPercent = false
            builderResult.staPercent = Float(0)
@@ -2736,10 +2837,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.staAmount = value
            }
       }
+      @discardableResult
       public func setStaAmount(_ value:Int32) -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         self.staAmount = value
         return self
       }
+      @discardableResult
       public func clearStaAmount() -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder{
            builderResult.hasStaAmount = false
            builderResult.staAmount = Int32(0)
@@ -2750,6 +2853,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.PotionAttributes()
         return self
@@ -2765,6 +2869,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.PotionAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.PotionAttributes) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.PotionAttributes() {
          return self
@@ -2775,12 +2880,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasStaAmount {
              staAmount = other.staAmount
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -2804,13 +2911,13 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.PotionAttributes.Builder()
-        if let jsonValueStaPercent = jsonMap["staPercent"] as? NSNumber {
-          resultDecodedBuilder.staPercent = jsonValueStaPercent.floatValue
+        if let jsonValueStaPercent = jsonMap["staPercent"] as? Float {
+          resultDecodedBuilder.staPercent = Float(jsonValueStaPercent)
         }
-        if let jsonValueStaAmount = jsonMap["staAmount"] as? NSNumber {
-          resultDecodedBuilder.staAmount = jsonValueStaAmount.int32Value
+        if let jsonValueStaAmount = jsonMap["staAmount"] as? Int {
+          resultDecodedBuilder.staAmount = Int32(jsonValueStaAmount)
         }
         return resultDecodedBuilder
       }
@@ -2826,6 +2933,17 @@ public extension Pogoprotos.Settings.Master.Item {
   }
 
   final public class ReviveAttributes : GeneratedMessage {
+
+    public static func == (lhs: Pogoprotos.Settings.Master.Item.ReviveAttributes, rhs: Pogoprotos.Settings.Master.Item.ReviveAttributes) -> Bool {
+      if (lhs === rhs) {
+        return true
+      }
+      var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+      fieldCheck = fieldCheck && (lhs.hasStaPercent == rhs.hasStaPercent) && (!lhs.hasStaPercent || lhs.staPercent == rhs.staPercent)
+      fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+      return fieldCheck
+    }
+
     public fileprivate(set) var staPercent:Float = Float(0)
     public fileprivate(set) var hasStaPercent:Bool = false
 
@@ -2880,7 +2998,7 @@ public extension Pogoprotos.Settings.Master.Item {
 
       var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
       if hasStaPercent {
-        jsonMap["staPercent"] = NSNumber(value:staPercent)
+        jsonMap["staPercent"] = Float(staPercent)
       }
       return jsonMap
     }
@@ -2921,7 +3039,7 @@ public extension Pogoprotos.Settings.Master.Item {
     //Meta information declaration end
 
     final public class Builder : GeneratedMessageBuilder {
-      private var builderResult:Pogoprotos.Settings.Master.Item.ReviveAttributes = Pogoprotos.Settings.Master.Item.ReviveAttributes()
+      fileprivate var builderResult:Pogoprotos.Settings.Master.Item.ReviveAttributes = Pogoprotos.Settings.Master.Item.ReviveAttributes()
       public func getMessage() -> Pogoprotos.Settings.Master.Item.ReviveAttributes {
           return builderResult
       }
@@ -2943,10 +3061,12 @@ public extension Pogoprotos.Settings.Master.Item {
                builderResult.staPercent = value
            }
       }
+      @discardableResult
       public func setStaPercent(_ value:Float) -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
         self.staPercent = value
         return self
       }
+      @discardableResult
       public func clearStaPercent() -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder{
            builderResult.hasStaPercent = false
            builderResult.staPercent = Float(0)
@@ -2957,6 +3077,7 @@ public extension Pogoprotos.Settings.Master.Item {
               return builderResult
            }
       }
+      @discardableResult
       override public func clear() -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
         builderResult = Pogoprotos.Settings.Master.Item.ReviveAttributes()
         return self
@@ -2972,6 +3093,7 @@ public extension Pogoprotos.Settings.Master.Item {
         let returnMe:Pogoprotos.Settings.Master.Item.ReviveAttributes = builderResult
         return returnMe
       }
+      @discardableResult
       public func mergeFrom(other:Pogoprotos.Settings.Master.Item.ReviveAttributes) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
         if other == Pogoprotos.Settings.Master.Item.ReviveAttributes() {
          return self
@@ -2979,12 +3101,14 @@ public extension Pogoprotos.Settings.Master.Item {
         if other.hasStaPercent {
              staPercent = other.staPercent
         }
-        _ = try merge(unknownField: other.unknownFields)
+        try merge(unknownField: other.unknownFields)
         return self
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
            return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
       }
+      @discardableResult
       override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
         let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
         while (true) {
@@ -3005,10 +3129,10 @@ public extension Pogoprotos.Settings.Master.Item {
           }
         }
       }
-      class public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
+      class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder {
         let resultDecodedBuilder = Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder()
-        if let jsonValueStaPercent = jsonMap["staPercent"] as? NSNumber {
-          resultDecodedBuilder.staPercent = jsonValueStaPercent.floatValue
+        if let jsonValueStaPercent = jsonMap["staPercent"] as? Float {
+          resultDecodedBuilder.staPercent = Float(jsonValueStaPercent)
         }
         return resultDecodedBuilder
       }
@@ -3036,7 +3160,7 @@ extension Pogoprotos.Settings.Master.Item.BattleAttributes: GeneratedMessageProt
     return try Pogoprotos.Settings.Master.Item.BattleAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes {
-    return try Pogoprotos.Settings.Master.Item.BattleAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.BattleAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.BattleAttributes {
     return try Pogoprotos.Settings.Master.Item.BattleAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3066,7 +3190,7 @@ extension Pogoprotos.Settings.Master.Item.EggIncubatorAttributes: GeneratedMessa
     return try Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes {
-    return try Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.EggIncubatorAttributes {
     return try Pogoprotos.Settings.Master.Item.EggIncubatorAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3096,7 +3220,7 @@ extension Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes: GeneratedMe
     return try Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes {
-    return try Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes {
     return try Pogoprotos.Settings.Master.Item.ExperienceBoostAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3126,7 +3250,7 @@ extension Pogoprotos.Settings.Master.Item.FoodAttributes: GeneratedMessageProtoc
     return try Pogoprotos.Settings.Master.Item.FoodAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes {
-    return try Pogoprotos.Settings.Master.Item.FoodAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.FoodAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.FoodAttributes {
     return try Pogoprotos.Settings.Master.Item.FoodAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3156,7 +3280,7 @@ extension Pogoprotos.Settings.Master.Item.FortModifierAttributes: GeneratedMessa
     return try Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes {
-    return try Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.FortModifierAttributes {
     return try Pogoprotos.Settings.Master.Item.FortModifierAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3186,7 +3310,7 @@ extension Pogoprotos.Settings.Master.Item.IncenseAttributes: GeneratedMessagePro
     return try Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes {
-    return try Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.IncenseAttributes {
     return try Pogoprotos.Settings.Master.Item.IncenseAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3216,7 +3340,7 @@ extension Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes: GeneratedM
     return try Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes {
-    return try Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes {
     return try Pogoprotos.Settings.Master.Item.InventoryUpgradeAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3246,7 +3370,7 @@ extension Pogoprotos.Settings.Master.Item.PokeballAttributes: GeneratedMessagePr
     return try Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes {
-    return try Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.PokeballAttributes {
     return try Pogoprotos.Settings.Master.Item.PokeballAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3276,7 +3400,7 @@ extension Pogoprotos.Settings.Master.Item.PotionAttributes: GeneratedMessageProt
     return try Pogoprotos.Settings.Master.Item.PotionAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes {
-    return try Pogoprotos.Settings.Master.Item.PotionAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.PotionAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.PotionAttributes {
     return try Pogoprotos.Settings.Master.Item.PotionAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
@@ -3306,7 +3430,7 @@ extension Pogoprotos.Settings.Master.Item.ReviveAttributes: GeneratedMessageProt
     return try Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
   }
   public class func parseFrom(data: Data) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes {
-    return try Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.sharedInstance.extensionRegistry).build()
+    return try Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder().mergeFrom(data: data, extensionRegistry:Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItemRoot.default.extensionRegistry).build()
   }
   public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pogoprotos.Settings.Master.Item.ReviveAttributes {
     return try Pogoprotos.Settings.Master.Item.ReviveAttributes.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
