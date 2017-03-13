@@ -17,8 +17,7 @@ open class pcrypt {
     }
     
     fileprivate static func makeIntegrityByte(byt: UInt8) -> UInt8 {
-        let tmp = (byt ^ 0x0c) & byt
-        return ((~tmp & 0x67) | (tmp & 0x98)) ^ 0x6f | (tmp & 0x08)
+        return (byt & 0xE3 | 0x10);
     }
     
     open static func encrypt(input: Array<UInt8>, iv: UInt32) -> [UInt8] {
@@ -32,7 +31,11 @@ open class pcrypt {
         let msBytes = UnsafeConverter.bytes(iv.bigEndian)
         output8.replaceSubrange(Range(0..<4), with: msBytes)
         output8.replaceSubrange(Range(4..<len), with: input)
-        output8[totalSize - 2] = UInt8(256 - (len % 256))
+        if((len % 256) == 0) {
+            output8[totalSize - 2] = 0
+        } else {
+            output8[totalSize - 2] = UInt8(256 - (len % 256))
+        }
         
         // Generate cipher and integrity byte
         var cipher8 = Array<UInt8>(repeating: 0, count: 256)

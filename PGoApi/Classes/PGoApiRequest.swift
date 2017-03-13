@@ -30,8 +30,8 @@ internal struct PGoApiMethod {
 }
 
 public struct PGoLocation {
-    public var lat:Double = 0
-    public var long:Double = 0
+    public var lat:Double = 0.0
+    public var long:Double = 0.0
     public var alt:Double = 6
     public var horizontalAccuracy: Double = 3.9
     public var verticalAccuracy: Double = 6.1
@@ -74,12 +74,12 @@ public struct PGoDeviceInfo {
     public var deviceBrand: String? = "Apple"
     public var deviceModel: String? = "iPhone"
     public var deviceModelIdentifier: String? = nil
-    public var deviceModelBoot: String? = "iPhone8,2"
+    public var deviceModelBoot: String? = "iPhone8,1"
     public var hardwareManufacturer: String? = "Apple"
-    public var hardwareModel: String? = "N66mAP"
-    public var firmwareBrand: String? = "iPhone OS"
+    public var hardwareModel: String? = "N71AP"
+    public var firmwareBrand: String? = "iOS"
     public var firmwareTags: String? = nil
-    public var firmwareType: String? = "9.3.3"
+    public var firmwareType: String? = "10.2"
     public var firmwareFingerprint: String? = nil
     public init() {}
 }

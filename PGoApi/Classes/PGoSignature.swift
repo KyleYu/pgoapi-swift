@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum JSONError: String, Error {
+    case NoData = "ERROR: no data"
+    case ConversionFailed = "ERROR: conversion from JSON failed"
+}
 
 internal class simpleLocationFixBuilder {
     internal var timestampSnapshot: UInt64 = 0
@@ -141,6 +145,16 @@ internal class platformRequest {
     internal let locationFix: LocationFix
     internal var requestHashes:Array<UInt64> = []
     
+    var locationHash : UInt32 = 0
+    var locationAuthHash : UInt32 = 0
+    
+    public var lat:Double = 0.0
+    public var long:Double = 0.0
+    public var alt:Double = 6
+    
+    public var authInfoBase64:String = ""
+    public var requestsBase64:[String] = []
+    
     internal init(auth: PGoAuth, api: PGoApiRequest) {
         self.locationHex = []
         self.auth = auth
@@ -173,20 +187,23 @@ internal class platformRequest {
         let authInfoTokenBuilder = authInfoBuilder.getTokenBuilder()
         authInfoBuilder.provider = auth.authType.description
         authInfoTokenBuilder.contents = auth.accessToken!
-        authInfoTokenBuilder.unknown2 = 59
+        let unk2:[Int] = [2, 8, 21, 21, 21, 28, 37, 56, 59, 59, 59]
+        authInfoTokenBuilder.unknown2 = Int32(unk2[Int(arc4random_uniform(UInt32(unk2.count)))])
         let authData = try! authInfoBuilder.build()
         self.authInfo = authData.data()
         return authData
     }
     
     fileprivate func hashAuthTicket() -> UInt32 {
-        let firstHash = niahash.hash32(buffer: getAuthData())
-        return niahash.hash32Salt(buffer: self.locationHex, salt: firstHash)
+        //let firstHash = niahash.hash32(buffer: getAuthData())
+        //return niahash.hash32Salt(buffer: self.locationHex, salt: firstHash)
+        return locationAuthHash
     }
     
     fileprivate func hashLocation() -> UInt32 {
-        self.locationHex = locationToHex(self.api.Location.lat, long:self.api.Location.long, accuracy: self.api.Location.horizontalAccuracy)
-        return niahash.hash32(buffer: self.locationHex)
+        //self.locationHex = locationToHex(self.api.Location.lat, long:self.api.Location.long, accuracy: self.api.Location.horizontalAccuracy)
+        //return niahash.hash32(buffer: self.locationHex)
+        return locationHash
     }
     
     internal func hashRequest(_ requestData:Data) -> UInt64 {
@@ -293,13 +310,13 @@ internal class platformRequest {
     internal func build() -> Pogoprotos.Networking.Envelopes.RequestEnvelope.PlatformRequest {
         let signatureBuilder = Pogoprotos.Networking.Envelopes.Signature.Builder()
         
-        signatureBuilder.locationHash2 = hashLocation().getInt32()
-        signatureBuilder.locationHash1 = hashAuthTicket().getInt32()
+        //signatureBuilder.locationHash2 = hashLocation().getInt32()
+        //signatureBuilder.locationHash1 = hashAuthTicket().getInt32()
         signatureBuilder.unknown25 = PGoVersion.versionHash
         signatureBuilder.timestamp = self.api.getTimestamp()
         signatureBuilder.timestampSinceStart = self.api.getTimestampSinceStart() + self.api.session.realisticStartTimeAdjustment
-        signatureBuilder.requestHash = self.requestHashes
-        
+        //signatureBuilder.requestHash = self.requestHashes
+
         if self.api.session.sessionHash == nil {
             self.api.session.sessionHash = Data.randomBytes(16)
         }
@@ -321,7 +338,62 @@ internal class platformRequest {
         if self.api.unknown6Settings.useSensorInfo {
             signatureBuilder.sensorInfo = [getSensorInfo()]
         }
+        
+        let json = ["latitude": self.lat,
+                    "longitude": self.long,
+                    "altitude": self.alt,
+                    "authTicket": self.authInfoBase64,
+                    "timestamp": signatureBuilder.timestamp,
+                    "sessionData": signatureBuilder.sessionHash.base64EncodedString(),
+                    "requests": self.requestsBase64
+            ] as [String : Any]
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        var request = URLRequest(url: URL(string:  PGoVersion.hashEndPoint)!)
+        
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.setValue("application/json;", forHTTPHeaderField: "content-type")
+        request.setValue(PGoVersion.hashKey, forHTTPHeaderField: "X-AuthToken")
+        request.setValue("PokeGOAPI-Java", forHTTPHeaderField: "User-Agent")
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        let session = URLSession.shared
+        print(jsonData)
+        session.dataTask(with: request) {data, response, err in            do {
+                guard let data = data else {
+                    throw JSONError.NoData
+                }
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                    throw JSONError.ConversionFailed
+                }
+                print(json)
                 
+                let requestHashes: NSArray = json["requestHashes"] as! NSArray
+                
+                for i in 0..<requestHashes.count {
+                    let hash = requestHashes[i] as! Int64
+                    
+                    if(hash<0) {
+                        self.requestHashes.append(UInt64(Int64.max + hash + 1))
+                    } else {
+                        self.requestHashes.append(UInt64(hash))
+                    }
+                }
+                let locationHash = json["locationHash"] as! UInt32
+                let locationAuthHash = json["locationAuthHash"] as! UInt32
+                signatureBuilder.locationHash1 = locationAuthHash.getInt32()
+                signatureBuilder.locationHash2 = locationHash.getInt32()
+                semaphore.signal()
+            } catch let error as JSONError {
+                semaphore.signal()
+            } catch let error as NSError {
+                semaphore.signal()
+            }
+        }.resume()
+        
+        semaphore.wait(timeout: .distantFuture)
+
         let signature = try! signatureBuilder.build()
         
         let unknown6 = Pogoprotos.Networking.Envelopes.RequestEnvelope.PlatformRequest.Builder()

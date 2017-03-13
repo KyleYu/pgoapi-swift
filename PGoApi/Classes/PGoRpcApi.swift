@@ -68,10 +68,17 @@ internal class PGoRpcApi {
         requestBuilder.longitude = self.api.Location.long
         requestBuilder.accuracy = self.api.Location.horizontalAccuracy
         
+        unknown6Builder!.lat = self.api.Location.lat
+        unknown6Builder!.long = self.api.Location.long
+        requestBuilder.accuracy = self.api.Location.horizontalAccuracy
+        
+        
         if auth.authToken == nil {
             requestBuilder.authInfo = unknown6Builder!.generateAuthInfo()
+            unknown6Builder?.authInfoBase64 = requestBuilder.authInfo.data().base64EncodedString()
         } else {
             requestBuilder.authTicket = auth.authToken!
+            unknown6Builder?.authInfoBase64 = requestBuilder.authTicket.data().base64EncodedString()
         }
         
         self.api.debugMessage("Generating subrequests...")
@@ -82,7 +89,7 @@ internal class PGoRpcApi {
             subrequestBuilder.requestMessage = subrequest.message.data()
             let subData = try! subrequestBuilder.build()
             requestBuilder.requests += [subData]
-            unknown6Builder!.requestHashes.append(unknown6Builder!.hashRequest(subData.data()))
+            unknown6Builder!.requestsBase64.append(subData.data().base64EncodedString())
         }
         
         requestBuilder.platformRequests = [unknown6Builder!.build()]
@@ -94,7 +101,7 @@ internal class PGoRpcApi {
         } else {
             requestBuilder.msSinceLastLocationfix = Int64(UInt64.random(900, max: 1100))
         }
-                
+        
         self.api.debugMessage("Building request...")
         return try! requestBuilder.build()
     }
@@ -229,11 +236,6 @@ internal class PGoRpcApi {
             responseObject!.getAssetDigest = parsedData as? Pogoprotos.Networking.Responses.GetAssetDigestResponse
         case .getDownloadUrls:
             responseObject!.getDownloadUrls = parsedData as? Pogoprotos.Networking.Responses.GetDownloadUrlsResponse
-        /*case .getSuggestedCodenames:
-            responseObject!.getSuggestedCodenames = parsedData as? Pogoprotos.Networking.Responses.GetSuggestedCodenamesResponse
-        case .checkCodenameAvailable:
-            responseObject!.checkCodenameAvailable = parsedData as? Pogoprotos.Networking.Responses.CheckCodenameAvailableResponse
- */
         case .claimCodename:
             responseObject!.claimCodename = parsedData as? Pogoprotos.Networking.Responses.ClaimCodenameResponse
         case .setAvatar:

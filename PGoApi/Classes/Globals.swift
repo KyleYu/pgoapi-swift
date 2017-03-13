@@ -9,16 +9,18 @@
 import Foundation
 
 
-internal struct PGoVersion {
-    internal static let versionHash: Int64 =  -816976800928766045
-    internal static let versionString: String = "0.45.0"
-    internal static let versionInt: UInt32 = 4500
+public struct PGoVersion {
+    internal static var versionHash: Int64 =  -816976800928766045
+    internal static let versionString: String = "0.57.4"
+    internal static let versionInt: UInt32 = 5704
     internal static let HASH_SEED: UInt32 = 0x46E945F8
+    internal static var hashEndPoint = "https://pokehash.buddyauth.com/api/v127_4/hash"
+    public static var hashKey = "HashKey"
 }
 
 internal struct PGoEndpoint {
-    internal static let LoginInfo = "https://sso.pokemon.com/sso/login?service=https%3A%2F%2Fsso.pokemon.com%2Fsso%2Foauth2.0%2FcallbackAuthorize"
-    internal static let LoginTicket = "https://sso.pokemon.com/sso/login?service=https%3A%2F%2Fsso.pokemon.com%2Fsso%2Foauth2.0%2FcallbackAuthorize"
+    internal static let LoginInfo = "https://sso.pokemon.com/sso/login?locale=en&service=https%3A%2F%2Fsso.pokemon.com%2Fsso%2Foauth2.0%2FcallbackAuthorize"
+    internal static let LoginTicket = "https://sso.pokemon.com/sso/login?locale=en&service=https%3A%2F%2Fsso.pokemon.com%2Fsso%2Foauth2.0%2FcallbackAuthorize"
     internal static let LoginOAuth = "https://sso.pokemon.com/sso/oauth2.0/accessToken"
     internal static var LoginProvider:PGoAuthType = .ptc
     internal static let Rpc = "https://pgorelease.nianticlabs.com/plfe/rpc"
